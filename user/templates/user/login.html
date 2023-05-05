@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>PG Finder</title>
+<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{% static 'user/assets/bootstrap/css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'user/assets/style.css' %}"/>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="{% static 'user/assets/bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static 'user/assets/script.js' %}"></script>
+
+<!-- Owl stylesheet -->
+<link rel="stylesheet" href="{% static 'user/assets/owl-carousel/owl.carousel.css' %}">
+<link rel="stylesheet" href="{% static 'user/assets/owl-carousel/owl.theme.css' %}">
+<script src="{% static 'user/assets/owl-carousel/owl.carousel.js' %}"></script>
+<!-- Owl stylesheet -->
+
+
+<!-- slitslider -->
+    <link rel="stylesheet" type="text/css" href="{% static 'user/assets/slitslider/css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'user/assets/slitslider/css/custom.css' %}" />
+    <script type="text/javascript" src="{% static 'user/assets/slitslider/js/modernizr.custom.79639.js' %}"></script>
+    <script type="text/javascript" src="{% static 'user/assets/slitslider/js/jquery.ba-cond.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'user/assets/slitslider/js/jquery.slitslider.js' %}"></script>
+<!-- slitslider -->
+
+</head>
+
+<body>
+{% comment %} <div id="loginpop" class="modal fade"> {% endcomment %}
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="row">
+        <div class="col-sm-6 login">
+        <h4>Login</h4>
+          <form class="" role="form" method="post">
+          {% csrf_token %}
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputEmail2">Email address</label>
+          <input type="username" class="form-control" placeholder="Enter username" name="username">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputPassword2">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" name="password">
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember me
+          </label>
+        </div>
+        <button type="submit" class="btn btn-success">Sign in</button>
+      </form>          
+        </div>
+        <div class="col-sm-6">
+          <h4>New User Sign Up</h4>
+          <p>Join today and get updated with all the properties deal happening around.</p>
+          <button type="submit" class="btn btn-info"  onclick="window.location.href='register.php'">Join Now</button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+</body>
+
+</html>

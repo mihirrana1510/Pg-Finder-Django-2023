@@ -1,0 +1,33 @@
+{% extends 'user/base.html' %}
+
+
+{% block 'main' %}
+{% load static %}
+
+<div class="inside-banner">
+  <div class="container"> 
+    <span class="pull-right"><a href="#">Home</a> / Buy</span>
+    <h1>Contact Us</h1>
+</div>
+</div>
+
+
+
+<div class="container">
+<div class="col-lg-7 col-sm-50 ">
+<div class="enquiry">
+  <h6><span class="glyphicon glyphicon-envelope"></span> Post Enquiry</h6>
+  <form role="form" action="/pg/contact/{{pg.id}}" method="POST">
+      {% csrf_token %}
+                <input type="text" class="form-control" name="name" placeholder="Full Name"/>
+                <input type="text" class="form-control" name="email" placeholder="you@yourdomain.com"/>
+                <input type="text" class="form-control" name="phone" placeholder="your number"/>
+                <textarea rows="6" class="form-control" name="message" placeholder="Whats on your mind?"></textarea>
+      <button type="submit" class="btn btn-primary" name="Submit">Send Message</button>
+      </form>
+    </div> 
+  </div>  
+</div>  
+  
+
+ {% endblock %}

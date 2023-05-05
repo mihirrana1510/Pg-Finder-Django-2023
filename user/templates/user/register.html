@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>PG Finder</title>
+<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{% static 'user/assets/bootstrap/css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'user/assets/style.css' %}"/>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="{% static 'user/assets/bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static 'user/assets/script.js' %}"></script>
+
+<!-- Owl stylesheet -->
+<link rel="stylesheet" href="{% static 'user/assets/owl-carousel/owl.carousel.css' %}">
+<link rel="stylesheet" href="{% static 'user/assets/owl-carousel/owl.theme.css' %}">
+<script src="{% static 'user/assets/owl-carousel/owl.carousel.js' %}"></script>
+<!-- Owl stylesheet -->
+
+
+<!-- slitslider -->
+    <link rel="stylesheet" type="text/css" href="{% static 'user/assets/slitslider/css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'user/assets/slitslider/css/custom.css' %}" />
+    <script type="text/javascript" src="{% static 'user/assets/slitslider/js/modernizr.custom.79639.js' %}"></script>
+    <script type="text/javascript" src="{% static 'user/assets/slitslider/js/jquery.ba-cond.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'user/assets/slitslider/js/jquery.slitslider.js' %}"></script>
+<!-- slitslider -->
+
+</head>
+
+<body>
+{% comment %} <div id="loginpop" class="modal fade"> {% endcomment %}
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="row">
+        <div class="col-sm-6 login">
+        <h4>Register</h4>
+          <form class="" role="form" method="post">
+          {% csrf_token %}
+
+          {% comment %} <div class="alert alert-danger" id="error-box">
+					</div> {% endcomment %}
+
+          {% if error %}
+					<div class="alert alert-danger">
+					    <label style="color:white;">Error: {{error}}</label>
+					</div>
+					{% endif %}
+
+
+					{% if success %}
+					<div class="alert alert-success">
+					    <label style="color:white;">Account Created Successfully, Please Login to Use your account <a href="/userlogin/">Login</a></label>
+					</div>
+					{% endif %}
+
+
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputEmail2">Email address</label>
+          <input type="name" class="form-control" id="exampleInputEmail2" placeholder="Enter username" name="name">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputEmail2">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email" name="email">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputEmail2">Email address</label>
+          <input type="password" class="form-control" id="exampleInputEmail2" placeholder="Enter password" name="pass1">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputPassword2">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword2" placeholder="confirm password" name= "pass2">
+        </div>
+        <button type="submit" class="btn btn-success">Sign Up</button>
+      </form>          
+        </div>
+        <div class="col-sm-6">
+          {% comment %} <a href = '/userlogin/'><h4>already registered</h4></a>   {% endcomment %}
+          <h4>Already Registered</h4>
+          {% comment %} <p>Join today and get updated with all the properties deal happening around.</p> {% endcomment %}
+          <a href = '/userlogin'><button type="submit" class="btn btn-info">Login</button></a>
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+</body>
+
+</html>
